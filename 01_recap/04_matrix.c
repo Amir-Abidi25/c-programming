@@ -1,13 +1,19 @@
 #include <stdio.h>
 
-int ROWS = 3;
-int COLS = 4;
+const int ROWS = 2;
+#define COLS 2
 
 int main () {
-    int vector_decl[5]; // uninitialized
-    int vector_init_0[5] = {0}; // all elements initialized to 0
-    int vector_implicit[] = {1, 2, 3, 4, 5}; // size is inferred from the number of initializers
-    int vector_explicit[5] = {1, 2, 3, 4, 5}; // explicitly sized and initialized
-    
+    // int matrix[ROWS][COLS] = {{1,2}, {3, 4}}; 
+    int matrix[2][3];
+    int vector[10];
+
+    for (int i=0; i < ROWS; i++) {
+        for (int y=0; y < COLS; y++) {
+            matrix[i][y] = i + y + 1;
+            printf("%i\n", matrix[i][y]);
+        }
+    }
+
     return 0;
 }
