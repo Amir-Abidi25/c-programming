@@ -13,7 +13,8 @@
 int main () {
     // C99 defindes: char *getenv(const char *name)
 
-    // POSIX - global env array: **environ
+    // POSIX - global env array: **environ or *envp[] 
+    // 
 
     return 0;
 }
