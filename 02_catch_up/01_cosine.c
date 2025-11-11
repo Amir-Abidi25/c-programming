@@ -45,29 +45,33 @@ void to_csv(char name[], Coordinate d[], int r) {
 void from_csv(char name[], int r) {
     // a. Create a file handler and check for errors
     FILE *fp = fopen(name, "r");
-    if(!fp){
+    // (!fp) == (fp ==NULL) 
+    if(fp == NULL){
         perror("Error opening a file");
         exit(EXIT_FAILURE);
     }
 
-    // b. Read data
+    // Read Header Line
     char x, y;
     fscanf(fp, "%c,%c\n", &x, &y);
-    printf("HEllO: %c,%c\n", x, y);
 
     // Array vom Typ Coordinate
+    Coordinate buffer[r];
 
     // Iterative read
-
-    // Return or print
+    int zeile = 0;
+    while (fscanf(fp, "%lf,%lf\n", &buffer[zeile].x, &buffer[zeile].y) == 2) {
+        printf("%i: x=%lf y=%lf\n", zeile, buffer[zeile].x, buffer[zeile].y);
+        zeile++;
+    }
 
     // c. Close file handler
     fclose(fp);
 }
 
 int main() {
-    double START = -5;
-    double END = 5;
+    double START = -10;
+    double END = 10;
     int RESOLUTION = 100;
     Coordinate data[RESOLUTION]; 
     
@@ -75,9 +79,9 @@ int main() {
     cosine(START, END, RESOLUTION, data);
 
     // 3. Print some data points
-    // for (int i=0; i < 5; i++){
-    //     printf("x:%lf - y:%lf\n", data[i].x, data[i].y);
-    // }
+    for (int i=0; i < 5; i++){
+        printf("x:%lf - y:%lf\n", data[i].x, data[i].y);
+    }
 
     // Write data points to a file
     to_csv("cosine_data.csv", data, RESOLUTION);

@@ -1,9 +1,9 @@
-/* Simple test program for the Vector library */
+/* 
+Simple program that creates a vector and prints it 
+*/
 
 #include <stdio.h>
 
 int main(void) { 
-    int vec = 5;
-    print("%i", vec);
-    return 0;
+
 }

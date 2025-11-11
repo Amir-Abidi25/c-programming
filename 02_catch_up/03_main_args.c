@@ -37,6 +37,10 @@ void copy_file(const char *source, const char *destination) {
 }
 
 int main (int argc,char *argv[]) {
-    copy_file("02_binary_copy.c", "03_main_args.c");
+    for (int i = 0; i < argc; i++) {
+        printf("Argument %d: %s\n", i, argv[i]);
+    }
+
+    // copy_file();
     return 0;
 }
