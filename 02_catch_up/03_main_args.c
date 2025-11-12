@@ -36,11 +36,19 @@ void copy_file(const char *source, const char *destination) {
 
 }
 
-int main (int argc,char *argv[]) {
+int main (int argc, char *argv[]) {
+    printf("Anzahl: %i\n", argc);
+
     for (int i = 0; i < argc; i++) {
         printf("Argument %d: %s\n", i, argv[i]);
     }
 
-    // copy_file();
+    if (argc != 3) {
+        printf("Usage is: ./main_args \"source_file\" \"destination file\" ");
+    }
+
+    char *source = argv[1];
+    char *destination = argv[2];
+    copy_file(source, destination);
     return 0;
 }
