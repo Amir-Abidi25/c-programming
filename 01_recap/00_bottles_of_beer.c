@@ -18,6 +18,6 @@ int main(void) {
             printf("Take one down and pass it around, %i %s of beer on the wall.\n\n", i-1, (i-1 == 1)?"bottle":"bottles");
         } 
     }
-    
+    printf("End of song.\n");
     return 0;
 }
