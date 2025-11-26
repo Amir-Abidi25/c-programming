@@ -4,7 +4,7 @@ const int ROWS = 2;
 #define COLS 2
 
 int main () {
-    // int matrix[ROWS][COLS] = {{1,2}, {3, 4}}; 
+    // int matrix[ROWS][COLS] = {{1,2}, {3,4}}; 
     int matrix[2][3];
     int vector[10];
 
