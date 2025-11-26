@@ -64,16 +64,28 @@ NOTES
 ===============================================================================
 */
 #include <stdio.h>
+#include <unistd.h>
+
+
+#define VERSION 0.1
+#define SQUARE(x) ((x)*(x))
+
 
 int main() {
     //1. Print constant VERSION (self created) and __TIME___ 
-    
+    printf("Compilation Time: %s\n", __TIME__);
+    printf("Version: %.2f\n", VERSION);
+
     //2. Create a Square macro 
-    int x = 5;
-    printf("Square of %i: %i\n", x, SQUARE(x));
+    int num = 5;
+    printf("Square of %i: %i\n", num, SQUARE(num+1));
 
     // 3. Print the process ID using 'getpid()' from '<unistd.h>'  
     // Note: <unistd.h> is a POSIX lib usually only supported by UNIX systems
-   
+    #ifdef __unix__
+    printf("Process ID: %i\n", getpid());
+    #else
+    printf("Kein UNIX System");
+    #endif
     return 0;
 }

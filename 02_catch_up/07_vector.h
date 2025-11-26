@@ -10,5 +10,28 @@
 
     #endif
 */
+// Inlcude Guards
+#ifndef VECTOR_H
+#define VECTOR_H
+
+#include <stdlib.h>
+#include <stdio.h>
+
+typedef struct
+{
+    size_t size;
+    int* data;
+} Vector;
+
+
+/**
+ * Print my vetor
+ * 
+ * @param Pointer to a specific vector
+ */
+void print_vector(Vector *vec);
+
+
+#endif
 
 

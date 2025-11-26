@@ -16,12 +16,17 @@ int main() {
     
     int buffer = 0;
 
-    while (buffer != -1) {
+    while (1) {
         scanf("%i", &buffer);
+        if (buffer == -1) {
+            break;
+        }
+
         seq[position] = buffer;
         position++;
 
         if (position >= capacity) {
+            printf("Increased capacity!");
             size_t new_cap = capacity + 4;
             int *tmp = realloc(seq, new_cap *sizeof(int));
             if (!tmp) {
@@ -30,17 +35,15 @@ int main() {
                 exit(EXIT_FAILURE);
             }
             seq = tmp;
-            free(tmp);
             capacity = new_cap;
         }
     }
 
     printf("Seq: ");
-    for(int i=0; i < position; i++) {
+    for(int i=0; i < capacity; i++) {
         printf("%i ", seq[i]);
     }
     printf("\n");
-
 
     free(seq);
 
