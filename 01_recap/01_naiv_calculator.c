@@ -7,10 +7,12 @@ int main () {
     do {
         printf("Enter calculation (e.g. 3.5 * 4.2): ");
         // 1. TODO: Read the input from the user
+
         // 2. TODO: Validate the operator, it should be one of +, -, * or /
     } while(1);
 
-    // Safe division function 
+    // Safe division function
+     
     // - Programm terminates with EXIT_FAILURE if denominator is 0
     // - Calculate division by 2 with bitshift
 
