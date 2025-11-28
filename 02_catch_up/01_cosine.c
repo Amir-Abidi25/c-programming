@@ -56,7 +56,7 @@ void from_csv(char name[], int r) {
     fscanf(fp, "%c,%c\n", &x, &y);
 
     // Array vom Typ Coordinate
-    Coordinate buffer[r];
+    Coordinate buffer[100];
 
     // Iterative read
     int zeile = 0;
@@ -73,7 +73,7 @@ int main() {
     double START = -10;
     double END = 10;
     int RESOLUTION = 100;
-    Coordinate data[RESOLUTION]; 
+    Coordinate data[100]; 
     
     // Calculate data points
     cosine(START, END, RESOLUTION, data);
